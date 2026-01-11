@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Agricultural Color Palette */
+    --background: 45 30% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 45 25% 95%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 45 25% 95%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - Rich Earth Green */
+    --primary: 95 60% 25%;
+    --primary-foreground: 45 30% 97%;
+
+    /* Secondary - Golden Wheat */
+    --secondary: 42 80% 55%;
+    --secondary-foreground: 25 30% 15%;
+
+    /* Muted - Soft Earth */
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Sky Blue for Weather */
+    --accent: 200 75% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 85%;
+    --input: 40 20% 88%;
+    --ring: 95 60% 30%;
+
+    --radius: 0.75rem;
+
+    /* Custom Agricultural Colors */
+    --soil-brown: 25 40% 35%;
+    --leaf-green: 120 45% 40%;
+    --sun-yellow: 45 95% 55%;
+    --rain-blue: 210 70% 55%;
+    --harvest-orange: 25 90% 55%;
+    --growth-emerald: 150 50% 45%;
+
+    /* Gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(95 60% 25%) 0%, hsl(95 50% 35%) 100%);
+    --gradient-sunrise: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(45 95% 55%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(200 75% 60%) 0%, hsl(200 70% 80%) 100%);
+    --gradient-field: linear-gradient(180deg, hsl(120 40% 45%) 0%, hsl(95 50% 35%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 30% 15% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(25 30% 15% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(25 30% 15% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 95 60% 25%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 45 30% 97%;
+    --sidebar-primary-foreground: 95 60% 25%;
+    --sidebar-accent: 95 50% 30%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 95 40% 35%;
+    --sidebar-ring: 42 80% 55%;
+  }
+
+  .dark {
+    --background: 25 25% 10%;
+    --foreground: 45 25% 95%;
+
+    --card: 25 20% 14%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 25 20% 14%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 95 50% 45%;
+    --primary-foreground: 25 25% 10%;
+
+    --secondary: 42 70% 50%;
+    --secondary-foreground: 25 25% 10%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 200 65% 55%;
+    --accent-foreground: 25 25% 10%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 25%;
+    --input: 25 15% 22%;
+    --ring: 95 50% 45%;
+
+    --sidebar-background: 25 20% 12%;
+    --sidebar-foreground: 45 25% 95%;
+    --sidebar-primary: 95 50% 45%;
+    --sidebar-primary-foreground: 25 25% 10%;
+    --sidebar-accent: 25 15% 18%;
+    --sidebar-accent-foreground: 45 25% 95%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 42 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .gradient-field {
+    background: var(--gradient-field);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-earth);
+  }
+
+  .farmer-button {
+    @apply py-4 px-6 text-lg font-semibold rounded-xl transition-all duration-300;
+    @apply active:scale-95 touch-manipulation;
+  }
+
+  .voice-button {
+    @apply w-20 h-20 rounded-full flex items-center justify-center;
+    @apply transition-all duration-300 active:scale-90;
+  }
+
+  .chat-bubble {
+    @apply max-w-[85%] rounded-2xl px-4 py-3;
+  }
+
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground ml-auto rounded-br-md;
+  }
+
+  .chat-bubble-bot {
+    @apply bg-card border border-border mr-auto rounded-bl-md;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes bounce-gentle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .scroll-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}

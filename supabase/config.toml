@@ -1,0 +1,16 @@
+project_id = "sdkfsqvoewzgdccyrdyb"
+
+[functions.chat]
+verify_jwt = false
+
+[functions.analyze-pest]
+verify_jwt = false
+
+[functions.analyze-soil]
+verify_jwt = false
+
+[functions.get-market-prices]
+verify_jwt = false
+
+[functions.weather-recommendations]
+verify_jwt = false
